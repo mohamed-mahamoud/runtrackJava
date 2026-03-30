@@ -7,5 +7,6 @@ public class jobs01 {
         System.out.println("Ecriver un mot");
         mot=scan.next();
         System.out.println("Vous avez ecrit: " + mot);
+        scan.close();
     }
 }
