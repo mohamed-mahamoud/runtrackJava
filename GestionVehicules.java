@@ -15,6 +15,11 @@ public class GestionVehicules {
             System.out.println("Date d'achat : " + dateAchat);
             System.out.println("Prix d'achat : " + prixAchat);
         }
+        public void calculerPrix(int anneeActuelle) {
+            int age = anneeActuelle - Integer.parseInt(dateAchat.substring(dateAchat.length() - 4));
+            this.prixCourant = prixAchat-(prixAchat*0.1*age);
+        }
+
     }
         class Voiture extends Vehicule {
             protected String cylindre;
@@ -35,6 +40,20 @@ public class GestionVehicules {
                 System.out.println("Puissance : " + puissance);
                 System.out.println("Kilometrage : " + kilometrage);
             }
+            public void calculerPrix(int anneeActuelle) {
+                super.calculerPrix(anneeActuelle);
+                int parcours = (int) (kilometrage / 10000);
+                this.prixCourant = prixCourant - (prixCourant * 0.05 * parcours);
+                if (this.marque.equalsIgnoreCase("Renault") || this.marque.equalsIgnoreCase("Fiat")) {
+                    this.prixCourant = prixCourant - (prixCourant * 0.1);
+                }
+                if (this.marque.equalsIgnoreCase("Mercedes") || this.marque.equalsIgnoreCase("Ferrari")) {
+                    this.prixCourant = prixCourant + (prixCourant * 0.2);
+                }
+                if (this.prixCourant < 0) {
+                    this.prixCourant = 0;
+                }
+            }
     }
         class Avion extends Vehicule {
             protected String moteur;
@@ -48,6 +67,20 @@ public class GestionVehicules {
                 super.affiche();
                 System.out.println("Moteur : " + moteur);
                 System.out.println("Heures de vol : " + heuresVol);
+            }
+            public void calculerPrix(int anneeActuelle) {
+                super.calculerPrix(anneeActuelle);
+                if (this.moteur.equalsIgnoreCase("hélices")) {
+                    int vol = (int) (heuresVol / 100);
+                    this.prixCourant = prixCourant - (prixCourant * 0.10 * vol);
+                }
+                else {
+                    int vol = (int) (heuresVol / 1000);
+                    this.prixCourant = prixCourant - (prixCourant * 0.10 * vol);
+                }
+                if (this.prixCourant < 0) {
+                    this.prixCourant = 0;
+                }   
             }
         }
 }
