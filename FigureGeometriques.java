@@ -1,8 +1,25 @@
 public class FigureGeometriques {
-    class Rectangle {
+    class Figure{
+        protected  double x;
+        protected double y;
+        public Figure(double x, double y) {
+            this.x = x;
+            this.y = y;
+        }
+        public void affiche() {
+            System.out.println("Figure de centre (" + x + ", " + y + ")");
+        }
+        public void setCentre(double x, double y) {
+            this.x = x;
+            this.y = y;
+        }
+    }
+    
+    class Rectangle extends Figure {
         protected double largeur;
         protected double longueur;
         public Rectangle(double largeur, double longueur) {
+            super(0, 0); // Call the constructor of the parent class Figure
             this.largeur = largeur;
             this.longueur = longueur;
         }
@@ -22,13 +39,10 @@ public class FigureGeometriques {
             this.largeur = largeur;
         }
     }
-    class Cercle{
-        protected double x;
-        protected double y;
+    class Cercle extends Figure {
         protected double rayon;
         public Cercle(double x, double y, double rayon) {
-            this.x = x;
-            this.y = y;
+            super(x, y);
             this.rayon = rayon;
         }
         public void affiche(){
