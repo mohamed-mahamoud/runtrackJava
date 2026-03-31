@@ -64,4 +64,12 @@ public class FigureGeometriques {
             return distance < rayon;
         }
     }
+    class RectangleColore extends Rectangle {
+        protected int couleur;
+        public RectangleColore(double largeur, double longueur, int couleur) {
+            super(largeur, longueur);
+            this.couleur = couleur;
+        }
+
+    }
 }
