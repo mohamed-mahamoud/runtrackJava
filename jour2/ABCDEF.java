@@ -49,7 +49,7 @@
             a=null; //correct
             null=a; //incorrect null n'est pas une variable, on ne peut pas lui affecter quelque chose
             a=d; //correct
-            b=d; //incorrect D hérite de A, pas de B — aucun lien entre D et B
+            b=d; //incorrect D hérite de A, pas de B aucun lien entre D et B
             a=e; //correct
             d=e; //correct
 

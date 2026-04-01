@@ -1,5 +1,4 @@
 
-
 class Toto{
     int toto =0;
     Toto(){
