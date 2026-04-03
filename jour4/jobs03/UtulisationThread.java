@@ -8,7 +8,7 @@ public class UtulisationThread {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("la longeur du texte : ");
-        long length = scanner.nextInt();
+        long length = scanner.nextInt();-
         long legnthTread = length / 2;
         Genereration2Thread thread1 = new Genereration2Thread(legnthTread);
         Genereration2Thread thread2 = new Genereration2Thread(legnthTread);

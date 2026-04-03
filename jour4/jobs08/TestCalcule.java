@@ -26,7 +26,6 @@ public class TestCalcule {
         }
 
         long endGlobal = System.nanoTime();
-        long sommeAttendue = max * (max + 1) / 2;
         double elapsedMs = (endGlobal - startGlobal) / 1_000_000.0;
 
         System.out.println("Somme totale : " + somme);
